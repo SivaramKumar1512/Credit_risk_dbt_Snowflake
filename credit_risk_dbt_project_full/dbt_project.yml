@@ -1,0 +1,19 @@
+name: 'credit_risk_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'credit_risk_profile'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+
+models:
+  credit_risk_project:
+    staging:
+      +materialized: view
+
+    marts:
+      +schema: MART
+      +materialized: table
